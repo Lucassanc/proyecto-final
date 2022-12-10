@@ -1,0 +1,20 @@
+{% extends 'ejemplo/base_operarios.html' %}
+
+{% block titulo %}
+Buscar operario
+{% endblock%}
+
+{% block contenido %}
+    <form action="/operarios/buscar" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+    
+    {% for operario in lista_operarios %}
+    <ul>
+        <li> Nombre: {{operario.nombre}}, Legajo: {{operario.legajo}}, Categoria: {{operario.categoria}}, Observaciones: {{operario.observaciones}}</li>
+    </ul>
+    {% endfor %}
+    
+{% endblock %}

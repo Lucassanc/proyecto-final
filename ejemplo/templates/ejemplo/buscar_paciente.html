@@ -1,0 +1,20 @@
+{% extends 'ejemplo/base_pacientes.html' %}
+
+{% block titulo %}
+Buscar paciente
+{% endblock%}
+
+{% block contenido %}
+    <form action="/pacientes/buscar" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+    
+    {% for paciente in lista_pacientes %}
+    <ul>
+        <li> Nombre: {{paciente.nombre}}, Tipo: {{paciente.tipo}}, Edad: {{paciente.edad}}, Observaciones: {{paciente.observaciones}}</li>
+    </ul>
+    {% endfor %}
+    
+{% endblock %}
