@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'ejemplo/base_pacientes.html' %}
 
-    <h1>Lista de pacientes</h1>
-
+{%block titulo %}
+Lista de pacientes:<br>
+{% endblock %}
+{%block contenido%}
+    <a href="/pacientes/alta">Nuevo Paciente</a><br>
+    <a href="/pacientes/Buscar/{{ paciente.id }}">Buscar Paciente</a>
+    <ul>
     {% for paciente in lista_pacientes %}
-        <ul>
+        <li>
             <li> Nombre: {{paciente.nombre}}, Tipo: {{paciente.tipo}}, Edad: {{paciente.edad}}, Observaciones: {{paciente.observaciones}} </li>
-        </ul>
+        </li>
     {% endfor %}
-    
-</body>
-</html>
+    </ul>
+{% endblock %}
