@@ -5,7 +5,7 @@ Lista de pacientes:<br>
 {% endblock %}
 {%block contenido%}
     <a href="/pacientes/alta">Nuevo Paciente</a><br>
-    <a href="/pacientes/buscar/{{ paciente.id }}">Buscar Paciente</a>
+    <a href="/pacientes/buscar{{ paciente.id }}">Buscar Paciente</a>
     <ul>
     {% for paciente in lista_pacientes %}
         <li>

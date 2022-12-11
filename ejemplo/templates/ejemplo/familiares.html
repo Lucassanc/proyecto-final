@@ -5,7 +5,7 @@ Lista de familiares:<br>
 {% endblock %}
 {%block contenido%}
     <a href="/mi-familia/alta">Nuevo Familiar</a><br>
-    <a href="/mi-familia/buscar/{{ familiar.id }}">Buscar Familiar</a>
+    <a href="/mi-familia/buscar{{ familiar.id }}">Buscar Familiar</a>
     <ul>
     {% for familiar in lista_familiares %}
         <li>
