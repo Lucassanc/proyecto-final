@@ -11,6 +11,7 @@
     <form method="post">
         {% csrf_token %}
         "¿ Estás seguro de borrar el familiar {{ object }} ?"
+        <a href="/panel-familia" type="button">NO</a>
         <input type="submit" value="SI">
     </form>
 
