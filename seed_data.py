@@ -1,4 +1,4 @@
-from ejemplo.models import Familiar, Pacientes, Operarios
+from ejemplo.models import Familiar
 Familiar(nombre="Rosario", direccion="Rio Parana 745", numero_pasaporte=123123).save()
 Familiar(nombre="Alberto", direccion="Rio Parana 745", numero_pasaporte=890890).save()
 Familiar(nombre="Samuel", direccion="Rio Parana 745", numero_pasaporte=345345).save()
