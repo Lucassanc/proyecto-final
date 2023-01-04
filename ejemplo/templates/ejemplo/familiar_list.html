@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/panel-familia/crear" type="button">Crear familiar</a> <br> 
 <ul>
 
 {% block buscar %} {% endblock %}
 
 {% for familiar in object_list %}
-    <li>{{familiar.id}} -- {{familiar.nombre}} -- {{familiar.direccion}}</li>
-{% endfor %}    
+    <li>{{familiar.id}} -- {{familiar.nombre}} -- {{familiar.direccion}}
+        <a href='panel-familia/{{familiar.id}}/borrar/' type="button">Borrar</a>
+        <a href='panel-familia/{{familiar.id}}/actualizar' type="button">Actulizar</a>
+    </li>
+{% endfor %}
 </ul>
 
 </body>

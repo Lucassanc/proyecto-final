@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 from ejemplo.views import FamiliarList, FamiliarDetalle, FamiliarCrear, FamiliarBorrar, FamiliarActualizar
+from proyecto_final.views import index, PostList, PostCrear
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +26,8 @@ urlpatterns = [
     path('panel-familia/crear', FamiliarCrear.as_view()),
     path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
+    path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
+    path('proyecto_final/', index, name="pag_index"),
+    path('proyecto_final/listar/', PostList.as_view(), name="pag_listar"),
+    path('proyecto_final/crear/', PostCrear.as_view(), name="pag_crear"),
 ]
