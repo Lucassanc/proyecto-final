@@ -29,5 +29,5 @@ class PostActualizar(UpdateView):
 
 class UserSignUp(CreateView):
     form_class = UsuarioForm
-    template_name = 'registration/signup.html'
+    template_name = "registration/signup.html"
     success_url = reverse_lazy("pag_listar")
