@@ -3,7 +3,12 @@
 {% block contenido %}
 <ul>
     {% for post in object_list %}
-        <li>{{post.titulo}}</li>
+        <li>
+            {{post.titulo}} -- {{post.publicado_el}}
+            <a href="{% url 'pag_borrar' post.id %}">Borrar</a>
+            <a href="{% url 'pag_actualizar' post.id %}">Actualizar</a>
+            <a href="{% url 'pag_detalle' post.id %}">Ver</a>
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}

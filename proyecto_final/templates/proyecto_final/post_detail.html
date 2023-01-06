@@ -1,0 +1,10 @@
+{% extends 'proyecto_final/base.html' %}
+
+{% block contenido %} 
+    <h1>{{object.titulo}}</h1>
+    <h8>Publicado el: {{object.publicado_el}}</h8>
+    <h2>{{object.sub_titulo}}</h2>
+    <div>
+        {{object.texto}}
+    </div>
+{% endblock %}

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from ejemplo.views import FamiliarList, FamiliarDetalle, FamiliarCrear, FamiliarBorrar, FamiliarActualizar
-from proyecto_final.views import index, PostList, PostCrear
+from proyecto_final.views import index, PostList, PostCrear, PostActualizar, PostBorrar, PostrDetalle, UserSignUp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +30,8 @@ urlpatterns = [
     path('proyecto_final/', index, name="pag_index"),
     path('proyecto_final/listar/', PostList.as_view(), name="pag_listar"),
     path('proyecto_final/crear/', PostCrear.as_view(), name="pag_crear"),
+    path('proyecto_final/<int:pk>/actualizar/', PostActualizar.as_view(), name="pag_actualizar"),
+    path('proyecto_final/<int:pk>/borrar/', PostBorrar.as_view(), name="pag_borrar"),
+    path('proyecto_final/<int:pk>/detalle/', PostrDetalle.as_view(), name="pag_detalle"),
+    path('proyecto_final/signup/', UserSignUp.as_view(), name="pag_signup"),
 ]
