@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
-from proyecto_final.models import Post
+from proyecto_final.models import Post, Avatar
 from django.urls import reverse_lazy
 from proyecto_final.forms import UsuarioForm
 from django.contrib.auth.views import LoginView, LogoutView
@@ -9,6 +9,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 def index(request):
     return render(request, "proyecto_final/index.html", {})
+
+def Nosotros(request):
+    return render(request, "proyecto_final/sobrenosotros.html", {})
 
 class PostrDetalle(DetailView):
     model = Post
@@ -40,3 +43,9 @@ class UserLogin(LoginView):
 
 class UserLogout(LogoutView):
     next_page = reverse_lazy("pag_index")
+
+class AvatarActualizar(UpdateView):
+    model = Avatar
+    fields = ['imagen']
+    success_url = reverse_lazy("pag_listar")
+
