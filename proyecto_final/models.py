@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Post(models.Model):
+    creador = models.CharField(max_length=100)
     titulo = models.CharField(max_length=100)
     sub_titulo = models.CharField(max_length=100)
     texto = models.TextField(max_length=3000)

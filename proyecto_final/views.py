@@ -21,7 +21,7 @@ def Config(request):
 class PostrDetalle(DetailView):
     model = Post
 
-class PostList(ListView):
+class PostList(LoginRequiredMixin, ListView):
     model = Post
 
 class PostCrear(LoginRequiredMixin, CreateView):
