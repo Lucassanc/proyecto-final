@@ -19,7 +19,9 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from ejemplo.views import FamiliarList, FamiliarDetalle, FamiliarCrear, FamiliarBorrar, FamiliarActualizar
-from proyecto_final.views import index, PostList, PostCrear, PostActualizar, PostBorrar, PostrDetalle, UserSignUp, UserLogin, UserLogout, AvatarActualizar, Nosotros
+from proyecto_final.views import index, Nosotros, Config
+from proyecto_final.views import PostList, PostCrear, PostActualizar, PostBorrar, PostrDetalle, UserSignUp, UserLogin, UserLogout, AvatarActualizar, UserActualizar
+from proyecto_final.views import MensajeBorrar, MensajeCrear, MensajeDetalle, MensajeListar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +32,8 @@ urlpatterns = [
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
     path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
     path('proyecto_final/', index, name="pag_index"),
+    path('proyecto_final/nosotros/', Nosotros, name="pag_nosotros"),
+    path('proyecto_final/config/', Config, name="pag_config"),
     path('proyecto_final/listar/', PostList.as_view(), name="pag_listar"),
     path('proyecto_final/crear/', PostCrear.as_view(), name="pag_crear"),
     path('proyecto_final/<int:pk>/actualizar/', PostActualizar.as_view(), name="pag_actualizar"),
@@ -39,7 +43,11 @@ urlpatterns = [
     path('proyecto_final/login/', UserLogin.as_view(), name="pag_login"),
     path('proyecto_final/logout/', UserLogout.as_view(), name="pag_logout"),
     path('proyecto_final/avatar/<int:pk>/actualizar/', AvatarActualizar.as_view(), name="pag_avatar_act"),
-    path('proyecto_final/nosotros/', Nosotros, name="pag_nosotros"),
+    path('proyecto_final/user/<int:pk>/actualizar/', UserActualizar.as_view(), name="pag_config_perfil"),
+    path('proyecto_final/mensaje/listar/', MensajeListar.as_view(), name="pag_mensaje_listar"),
+    path('proyecto_final/mensaje/<int:pk>/detalle/', MensajeDetalle.as_view(), name="pag_mensaje_detalle"),
+    path('proyecto_final/mensaje/crear/', MensajeCrear.as_view(), name="pag_mensaje_crear"),
+    path('proyecto_final/mensaje/<int:pk>/borrar/', MensajeBorrar.as_view(), name="pag_mensaje_borrar"),
 ]
 
 

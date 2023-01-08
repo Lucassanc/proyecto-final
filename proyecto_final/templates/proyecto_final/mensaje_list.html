@@ -1,0 +1,18 @@
+{% extends 'proyecto_final/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <a href="{% url 'pag_mensaje_crear' %}">Enviar Mensaje</a><br><br>
+{% endif %}
+<ul>
+        {% for mensaje in object_list %}
+            <li>
+                {{mensaje.nombre}} -- {{mensaje.enviado_el}}
+                {% if user.is_authenticated %}
+                    <a href="{% url 'pag_mensaje_borrar' mensaje.id %}">Borrar</a>
+                    <a href="{% url 'pag_mensaje_detalle' mensaje.id %}">Ver</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+</ul>
+{% endblock %}

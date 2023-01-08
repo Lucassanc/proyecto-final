@@ -1,0 +1,11 @@
+{% extends 'proyecto_final/base.html' %}
+
+{% block contenido %}
+<h1>Esta seguro que quiere borrar el mensaje para "{{object.nombre}}" del {{object.enviado_el}}</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'pag_listar' %}">No</a>
+    <input type="submit" value="Si">
+</form>
+{% endblock %}

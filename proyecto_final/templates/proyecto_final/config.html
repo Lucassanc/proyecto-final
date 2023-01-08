@@ -1,0 +1,12 @@
+{% extends 'proyecto_final/base.html' %}
+
+{% block contenido %}
+    <h4>Sus datos:</h4><br>
+    <img src="{{user.avatar.imagen.url}}" height="35"><br>
+    Nombre: {{user.first_name}} <br>
+    Apellido: {{user.last_name}}<br>
+    Email: {{user.email}} <br>
+    <h4>¿Que desea actualizar?</h4>
+    <a href="{% url 'pag_config_perfil' user.id %}">Datos Personales</a><br>
+    <a href="{% url 'pag_avatar_act' user.id %}">Foto Avatar</a>
+{% endblock %}
