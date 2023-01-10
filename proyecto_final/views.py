@@ -67,7 +67,7 @@ class MensajeListar(LoginRequiredMixin, ListView):
 
 class MensajeCrear(LoginRequiredMixin, CreateView):
     model = Mensaje
-    success_url = reverse_lazy("pag_mensaje_crear")
+    success_url = reverse_lazy("pag_index")
     fields = ['nombre', 'email', 'texto']
 
 class MensajeBorrar(LoginRequiredMixin, DeleteView):
