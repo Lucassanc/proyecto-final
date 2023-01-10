@@ -1,6 +1,6 @@
-Paso 1: Usar import seed_data en el shell (opcional)
-Paso 2: Correr comando: python manage.py runserver
-#En caso de no haber corrido import seed_data iniciar siempre por los urls + "/alta" para ingresar un ejemplo a la lista si no se hace se vera un error en la lista#
-Paso 3: Probar urls: familiares, familiares/alta, familiares/buscar
-Paso 4: Probar urls: pacientes, pacientes/alta, pacientes/buscar
-Paso 5: Probar urls: operarios, operarios/alta, operarios/buscar.
+# Usar comando python manage.py runserver
+# ingresar al local host y a su vez a la pagina principal localhost/proyecto_final
+# Para navegar libremente por la pagina tiene que primero ingresar a su usuario, de ser necesario registrese como usuario nuevo
+# Todo el tutorial esta en el video en Youtube:
+
+https://youtu.be/A8rj8n4FP1M
